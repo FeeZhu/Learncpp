@@ -99,4 +99,37 @@ subArray max3(subArray a, subArray b, subArray c)
 	return maxArray;
 }
 
-// 3. 线性求解法（贪心算法）
+// 3. 线性求解法（贪心算法）时间复杂度O(n)
+subArray maxsubarray3(const int A[], int left, int right)
+{
+	//贪心算法的关键就是假设前面数组已经求出了最大子序列
+	int sum = -9999999,sum2=-9999999;
+	subArray maxsub;
+	for (int i=left;i<right;i++)
+	{
+		if (i == left)
+		{
+			sum = A[i];
+			maxsub.sum = sum;
+			maxsub.left = i;
+			maxsub.right = i;
+		}
+
+		int temp = 0;
+		for (int j=i;j>=left;j--)
+		{
+			temp += A[j];
+			if (temp>sum2)
+			{
+				sum2 = temp;
+				if (sum2 > sum)
+				{
+					maxsub.sum = sum2;
+					maxsub.left = j;
+					maxsub.right = i;
+				}
+			}
+		}
+	}
+	return maxsub;
+}
