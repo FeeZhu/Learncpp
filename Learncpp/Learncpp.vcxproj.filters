@@ -30,6 +30,12 @@
     <ClInclude Include="MaxsubArray.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Linklist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Priority_queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

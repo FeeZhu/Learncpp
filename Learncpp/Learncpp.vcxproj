@@ -145,7 +145,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Linklist.h" />
     <ClInclude Include="MaxsubArray.h" />
+    <ClInclude Include="Priority_queue.h" />
     <ClInclude Include="Sort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />

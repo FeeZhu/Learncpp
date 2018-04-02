@@ -99,37 +99,58 @@ subArray max3(subArray a, subArray b, subArray c)
 	return maxArray;
 }
 
-// 3. 线性求解法（贪心算法）时间复杂度O(n)
+// 3. 动态规划算法 时间复杂度O(n2)
 subArray maxsubarray3(const int A[], int left, int right)
 {
-	//贪心算法的关键就是假设前面数组已经求出了最大子序列
-	int sum = -9999999,sum2=-9999999;
+	//动态规划算法的关键就是假设前面数组已经求出了最大子序列
+	int sum = -9999999;
 	subArray maxsub;
 	for (int i=left;i<right;i++)
 	{
-		if (i == left)
-		{
-			sum = A[i];
-			maxsub.sum = sum;
-			maxsub.left = i;
-			maxsub.right = i;
-		}
 
 		int temp = 0;
 		for (int j=i;j>=left;j--)
 		{
 			temp += A[j];
-			if (temp>sum2)
+			if (temp>sum)
 			{
-				sum2 = temp;
-				if (sum2 > sum)
-				{
-					maxsub.sum = sum2;
-					maxsub.left = j;
-					maxsub.right = i;
-				}
+				sum = temp;
+				maxsub.sum = sum;
+				maxsub.left = j;
+				maxsub.right = i;
 			}
 		}
 	}
+	return maxsub;
+}
+
+// 4.数组和的方法，时间复杂度O（n）
+subArray maxsubarray4(const int A[], int left, int right)
+{
+	//用一个数组记录下所有的和，然后遍历求最大的一组max-min
+	// 越简单的逻辑反而花费了更多的时间去调试
+	subArray maxsub;
+	int *sum = new int[right - left];
+	sum[0] = A[left];
+	for (int i=1;i<right - left;i++)
+	{
+		sum[i] =sum[i-1] + A[i+left];
+	}
+	int maxSum = sum[0];
+	int minSum = 0;
+	for (int j=1;j<right-left;j++)
+	{
+		if (sum[j-1] < minSum)
+		{
+			minSum = sum[j-1];
+			maxsub.left = j;
+		}
+		if ((sum[j]-minSum) > maxSum)
+		{
+			maxSum = sum[j]-minSum;
+			maxsub.right = j;
+		}
+	}
+	maxsub.sum = maxSum;
 	return maxsub;
 }
