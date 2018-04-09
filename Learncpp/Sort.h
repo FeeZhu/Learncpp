@@ -4,6 +4,7 @@
 //归并排序，函数申明
 std::vector <int> Merge(std::vector<int> l, std::vector<int> r);
 void max_heapify(std::vector<int> &a, int i, int n);
+int Partition(std::vector<int> &a, int p, int r);
 
 //插入排序
 void insertSort(std::vector<int> &a)
@@ -113,3 +114,33 @@ void max_heapify(std::vector<int> &a, int i,int n)
 	}
 }
 
+/*
+   快速排序：一种原址排序方法，最优状态下时间复杂度为O(nlgn)
+   基本思想是根据主元将数组划分为两个小组，然后对两个部分用分冶的思想排序
+*/
+void QuickSort(std::vector<int> &a,int p,int r)
+{
+	if (p<r)//非常重要，防止数组越界
+	{
+		int q = Partition(a, p, r);
+		QuickSort(a, p, q - 1);
+		QuickSort(a, q + 1, r);
+	}
+}
+
+//将数组分成两个部分
+int Partition(std::vector<int> &a, int p, int r)
+{
+	int Pivot = a[r];//主元
+	int i = p - 1;
+	for (int j=p;j<r;j++)
+	{
+		if (a[j]<=Pivot)
+		{
+			i = i + 1;
+			std::swap(a[i], a[j]);
+		}
+	}
+	std::swap(a[i+1], a[r]);
+	return i+1 ;
+}

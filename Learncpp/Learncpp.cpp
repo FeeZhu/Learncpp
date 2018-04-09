@@ -18,15 +18,18 @@ int main()
 {
 	vector<int> A{3,6,2,8,4,8,23 ,10,15};
 	//insertSort(A);
-	HeapSort(A);
+	//HeapSort(A);
+	QuickSort(A, 0, A.size()-1);
 	for (int i = 0; i < A.size(); i++)
 	{
 		cout << A[i] << " ";
 	}
-	QueueAlgorithm::priqueue<int ,int> B(10);
-	cout<<B.pop();
-	B.Insert(1, 15);
-	B.print();
+
+	////优先队列
+	//QueueAlgorithm::priqueue<int ,int> B(10);
+	//cout<<B.pop();
+	//B.Insert(1, 15);
+	//B.print();
 	/*
 	//最大子数组问题
 	//test maxsubarray function
