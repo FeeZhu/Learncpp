@@ -1,6 +1,8 @@
 #pragma once
 //排序算法汇总，各种排序算法的实现c++
 //排序算法的稳定性：具有相同关键字的记录经过排序之后顺序还是相同的，说这种方法是稳定的
+//先实现每一种算法，考虑写成一个排序的类
+
 //归并排序，函数申明
 std::vector <int> Merge(std::vector<int> l, std::vector<int> r);
 void max_heapify(std::vector<int> &a, int i, int n);
@@ -70,6 +72,16 @@ std::vector<int> Merge(std::vector<int> l, std::vector<int> r)
 	return Result;
 	//2.采用插入排序的方法
 }
+/*
+   shell sort，希尔排序算法一种不稳定的排序方法
+   将数据分成几个小块，然后分别排序
+*/
+
+template<typename T>
+void ShellSort(std::vector<T> &a)
+{
+
+}
 
 /*
    堆排序
@@ -118,7 +130,8 @@ void max_heapify(std::vector<int> &a, int i,int n)
    快速排序：一种原址排序方法，最优状态下时间复杂度为O(nlgn)
    基本思想是根据主元将数组划分为两个小组，然后对两个部分用分冶的思想排序
 */
-void QuickSort(std::vector<int> &a,int p,int r)
+template<typename T>
+void QuickSort(std::vector<T> &a,int p,int r)
 {
 	if (p<r)//非常重要，防止数组越界
 	{
@@ -129,7 +142,8 @@ void QuickSort(std::vector<int> &a,int p,int r)
 }
 
 //将数组分成两个部分
-int Partition(std::vector<int> &a, int p, int r)
+template<typename T>
+int Partition(std::vector<T> &a, int p, int r)
 {
 	int Pivot = a[r];//主元
 	int i = p - 1;
@@ -144,3 +158,9 @@ int Partition(std::vector<int> &a, int p, int r)
 	std::swap(a[i+1], a[r]);
 	return i+1 ;
 }
+
+/*
+   上面的排序方式都是基于比较的排序方法，理论上需要的最小排序时间一定是O（nlgn）
+   而基于顺序的排序方法理论上时间复杂度可以达到O(N)
+
+*/

@@ -12,11 +12,10 @@
 #include "Priority_queue.h"
 
 using namespace std;
-void insertSort(vector<int> &a);
 
 int main()
 {
-	vector<int> A{3,6,2,8,4,8,23 ,10,15};
+	vector<double> A{3.4,6,2,8.5,4,8,23.5 ,10,15};
 	//insertSort(A);
 	//HeapSort(A);
 	QuickSort(A, 0, A.size()-1);
