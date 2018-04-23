@@ -1,14 +1,19 @@
 #pragma once
-//排序算法汇总，各种排序算法的实现c++
-//排序算法的稳定性：具有相同关键字的记录经过排序之后顺序还是相同的，说这种方法是稳定的
-//先实现每一种算法，考虑写成一个排序的类
+
+/*
+   排序问题是算法分析中的一个经典问题，几乎所有的算法分析都会把排序作为分析算法性能好坏的例子
+   每一种算法都有适用的范围和优劣，并不是说渐进时间复杂度小的算法在任何情况下一定最好。
+   //排序算法汇总，各种排序算法的实现c++
+   //排序算法的稳定性：具有相同关键字的记录经过排序之后顺序还是相同的，说这种方法是稳定的
+   //先实现每一种算法，考虑写成一个排序的类
+*/
 
 //归并排序，函数申明
 std::vector <int> Merge(std::vector<int> l, std::vector<int> r);
 void max_heapify(std::vector<int> &a, int i, int n);
 int Partition(std::vector<int> &a, int p, int r);
 
-//插入排序
+//插入排序，时间复杂度为O（n2）
 void insertSort(std::vector<int> &a)
 {
 	int key;
@@ -24,6 +29,45 @@ void insertSort(std::vector<int> &a)
 		}
 		a[j + 1] = key;
 	}
+}
+
+/*
+   shell sort是对插入排序一种改进。将数据分成几个小块，然后分别适用直接插入排序
+   希尔排序算法一种不稳定的排序方法
+*/
+
+template<typename T>
+void ShellSort(std::vector<T> &a)
+{
+	int gap;//shell排序的步长
+	int size = a.size();
+	//for (gap=size/3;gap>0;gap/=3)
+	//{
+	//	//每一次循环都保证左边集合小于右边集合,内部实际上是一个插入排序
+	//	for (int i=0;i<gap;i++)
+	//	{
+	//		for (int j=i+gap;j<size;j+=gap)
+	//		{
+	//			if (a[j]<a[j-gap])
+	//			{
+	//				T tmp = a[j];
+	//				int k = j - gap;
+	//				while (k >= 0 && a[k] > tmp)
+	//				{
+	//					a[k + gap] = a[k];
+	//					k -= gap;
+	//				}
+	//				a[k + gap] = tmp;
+	//			}
+	//		}
+	//	}
+	//}
+	//简化代码
+	for (gap = size / 2; gap > 0; gap /= 2)
+		for (int i = gap; i < size; i++)
+			for (int j = i - gap; j >= 0 && a[j] > a[j + gap]; j -= gap)
+				std::swap(a[j], a[j + gap]);
+
 }
 
 /*
@@ -71,16 +115,6 @@ std::vector<int> Merge(std::vector<int> l, std::vector<int> r)
 	}
 	return Result;
 	//2.采用插入排序的方法
-}
-/*
-   shell sort，希尔排序算法一种不稳定的排序方法
-   将数据分成几个小块，然后分别排序
-*/
-
-template<typename T>
-void ShellSort(std::vector<T> &a)
-{
-
 }
 
 /*
@@ -141,7 +175,7 @@ void QuickSort(std::vector<T> &a,int p,int r)
 	}
 }
 
-//将数组分成两个部分
+//将数组分成两个部分，有一种随机划分的方法
 template<typename T>
 int Partition(std::vector<T> &a, int p, int r)
 {
@@ -160,7 +194,26 @@ int Partition(std::vector<T> &a, int p, int r)
 }
 
 /*
-   上面的排序方式都是基于比较的排序方法，理论上需要的最小排序时间一定是O（nlgn）
+   上面的排序方式都是基于比较的排序方法，理论上最坏情况下的时间复杂度O（nlgn）
    而基于顺序的排序方法理论上时间复杂度可以达到O(N)
-
+   分别是计数排序、基数排序和桶排序
 */
+
+/*
+   计数排序：假设输入的n个元素都是区间0-k之间的一个整数,
+   然后记录每一个数出现的次数,这也是这种方法的局限性需要较大的内存开销
+   排序的时间复杂度为O（n+k）
+   空间复杂度为O(n+k)
+*/
+template<typename T>
+void CountSort(std::vector<T> &a,int n)
+{
+
+}
+
+/*
+    第九章：中位数和顺序统计量，选择数组中第i位的元素 选择问题
+	前提条件：假设数组内所有元素是互异的
+	毫无疑问，排序就可以直接解决这一类问题，但是这个问题相当于松弛了条件，线性时间内就可以解决这个问题
+*/
+

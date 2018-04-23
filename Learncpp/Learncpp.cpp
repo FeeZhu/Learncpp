@@ -18,12 +18,11 @@ int main()
 	vector<double> A{3.4,6,2,8.5,4,8,23.5 ,10,15};
 	//insertSort(A);
 	//HeapSort(A);
-	QuickSort(A, 0, A.size()-1);
+	ShellSort(A);
 	for (int i = 0; i < A.size(); i++)
 	{
 		cout << A[i] << " ";
 	}
-
 	////优先队列
 	//QueueAlgorithm::priqueue<int ,int> B(10);
 	//cout<<B.pop();
