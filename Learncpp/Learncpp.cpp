@@ -7,9 +7,9 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
-#include "Sort.h"
-#include "MaxsubArray.h"
-#include "Priority_queue.h"
+#include "SortandOrder/Sort.h"
+#include "SortandOrder/MaxsubArray.h"
+#include "SortandOrder/Priority_queue.h"
 
 using namespace std;
 

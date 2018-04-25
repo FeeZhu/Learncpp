@@ -24,16 +24,22 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Sort.h">
+    <ClInclude Include="排序和顺序统计量\MaxsubArray.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MaxsubArray.h">
+    <ClInclude Include="排序和顺序统计量\OrderStatics.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Linklist.h">
+    <ClInclude Include="排序和顺序统计量\Priority_queue.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Priority_queue.h">
+    <ClInclude Include="排序和顺序统计量\Sort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="数据结构\kdTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="数据结构\Linklist.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

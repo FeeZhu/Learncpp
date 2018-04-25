@@ -145,12 +145,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Linklist.h" />
-    <ClInclude Include="MaxsubArray.h" />
-    <ClInclude Include="Priority_queue.h" />
-    <ClInclude Include="Sort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="排序和顺序统计量\MaxsubArray.h" />
+    <ClInclude Include="排序和顺序统计量\OrderStatics.h" />
+    <ClInclude Include="排序和顺序统计量\Priority_queue.h" />
+    <ClInclude Include="排序和顺序统计量\Sort.h" />
+    <ClInclude Include="数据结构\kdTree.h" />
+    <ClInclude Include="数据结构\Linklist.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Learncpp.cpp" />
