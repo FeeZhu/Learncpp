@@ -134,3 +134,5 @@ int Partition(std::vector<T> &a, int low, int high, T x)
 	a[low] = x;
 	return low;
 }
+
+//³¢ÊÔ¸ü¸ÄÓÊÏä
