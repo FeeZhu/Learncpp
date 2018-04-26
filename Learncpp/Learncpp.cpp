@@ -10,19 +10,24 @@
 #include "SortandOrder/Sort.h"
 #include "SortandOrder/MaxsubArray.h"
 #include "SortandOrder/Priority_queue.h"
+#include "SortandOrder/OrderStatics.h"
 
 using namespace std;
 
 int main()
 {
-	vector<double> A{3.4,6,2,8.5,4,8,23.5 ,10,15};
+	vector<double> A{3.4,6,2,8.5,4,8,23.5 ,10,15,2.1,7.5,4.9,5,21.4};
 	//insertSort(A);
 	//HeapSort(A);
-	ShellSort(A);
+	/*ShellSort(A);
 	for (int i = 0; i < A.size(); i++)
 	{
 		cout << A[i] << " ";
-	}
+	}*/
+	cout<<WorstSelect(A,0,13,1);
+
+	//随机选择
+	//cout << RandomSelect(A, 0, 8, 0) << endl;
 	////优先队列
 	//QueueAlgorithm::priqueue<int ,int> B(10);
 	//cout<<B.pop();

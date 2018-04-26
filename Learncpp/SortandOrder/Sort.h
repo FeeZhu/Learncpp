@@ -176,10 +176,10 @@ void QuickSort(std::vector<T> &a,int p,int r)
 }
 
 //将数组分成两个部分，有一种随机划分的方法
-template<typename T>
+template <typename T>
 int Partition(std::vector<T> &a, int p, int r)
 {
-	int Pivot = a[r];//主元
+	T Pivot = a[r];//主元
 	int i = p - 1;
 	for (int j=p;j<r;j++)
 	{
@@ -210,10 +210,4 @@ void CountSort(std::vector<T> &a,int n)
 {
 
 }
-
-/*
-    第九章：中位数和顺序统计量，选择数组中第i位的元素 选择问题
-	前提条件：假设数组内所有元素是互异的
-	毫无疑问，排序就可以直接解决这一类问题，但是这个问题相当于松弛了条件，线性时间内就可以解决这个问题
-*/
 
