@@ -42,12 +42,21 @@
     <ClInclude Include="SortandOrder\Sort.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DataStructure\BSTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RBTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Learncpp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\kdTree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

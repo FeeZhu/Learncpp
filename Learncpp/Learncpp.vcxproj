@@ -145,8 +145,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataStructure\BSTree.h" />
     <ClInclude Include="DataStructure\kdTree.h" />
     <ClInclude Include="DataStructure\Linklist.h" />
+    <ClInclude Include="RBTree.h" />
     <ClInclude Include="SortandOrder\MaxsubArray.h" />
     <ClInclude Include="SortandOrder\OrderStatics.h" />
     <ClInclude Include="SortandOrder\Priority_queue.h" />
@@ -155,6 +157,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataStructure\kdTree.cpp" />
     <ClCompile Include="Learncpp.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

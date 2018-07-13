@@ -11,12 +11,13 @@
 #include "SortandOrder/MaxsubArray.h"
 #include "SortandOrder/Priority_queue.h"
 #include "SortandOrder/OrderStatics.h"
+#include "DataStructure/BSTree.h"
 
 using namespace std;
 
 int main()
 {
-	vector<double> A{3.4,6,2,8.5,4,8,23.5 ,10,15,2.1,7.5,4.9,5,21.4};
+	//vector<double> A{3.4,6,2,8.5,4,8,23.5 ,10,15,2.1,7.5,4.9,5,21.4};
 	//insertSort(A);
 	//HeapSort(A);
 	/*ShellSort(A);
@@ -24,7 +25,7 @@ int main()
 	{
 		cout << A[i] << " ";
 	}*/
-	cout<<WorstSelect(A,0,13,1);
+	//cout<<MidSelect(A,0,13,1);
 
 	//Ëæ»úÑ¡Ôñ
 	//cout << RandomSelect(A, 0, 8, 0) << endl;
@@ -42,5 +43,13 @@ int main()
 	a = maxsubarray3(A, 0, 16);
 	a = maxsubarray4(A, 0, 16);
 	*/
+	BSTree <int> tree;
+	srand((unsigned)time(NULL));
+	for (int i=1;i<10;i++)
+	{
+		tree.insert(rand());
+	}
+	cout<<tree.find(1);
 	return 0;
+
 }

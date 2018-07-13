@@ -53,13 +53,13 @@ int RandomPartition(std::vector<T> &A, int p, int r)
 	return i+1 ;
 }
 
-//最坏情况下为线性时间的选择算法
+//最坏情况下为线性时间的选择算法:中位数查找
 //函数输入参数：A随机数组，p，r数组的范围，i顺序值
 //函数返回值：第i个数的值
 //假设数组中所有元素都是互异的，我们可以在期望线性时间内找到任意统计顺序量
 //关键就是做好组的划分和选择的策略
 template <typename T>
-T WorstSelect(std::vector<T> &A, int l, int r, int i)
+T MidSelect(std::vector<T> &A, int l, int r, int i)
 {
 	//1.将n个元素划分为几组，每组5个元素,分别排序确定中位数
 	int N = r - l + 1;
@@ -67,7 +67,7 @@ T WorstSelect(std::vector<T> &A, int l, int r, int i)
 	vector<T> Median;//中位数数组
 	if (N <= 5)
 	{
-		//单独处理最后一组
+		//单独处理最后一组，实际上是不需要对最后一组数据求中位数的
 		T mid = insertSort(A, l + NGroup * 5 - 5, r);
 		Median.push_back(mid);
 		return A[l + i - 1];
@@ -79,7 +79,7 @@ T WorstSelect(std::vector<T> &A, int l, int r, int i)
 	}
 	//2.寻找中位数数组的中位数
 	int Midofmid = ceil(Median.size() / 2.0);
-	T x = WorstSelect(Median, 0, Median.size() - 1, Midofmid);
+	T x = MidSelect(Median, 0, Median.size() - 1, Midofmid);
 	//3.按照中位数对数组进行划分
 	int k = Partition(A, l, r, x);
 	int kl = k - l + 1;//前k个元素
@@ -89,11 +89,11 @@ T WorstSelect(std::vector<T> &A, int l, int r, int i)
 	}
 	else if (i < kl)
 	{
-		return  WorstSelect(A, l, k - 1, i);
+		return  MidSelect(A, l, k - 1, i);
 	}
 	else
 	{
-		return  WorstSelect(A, k + 1, r, i - kl);
+		return  MidSelect(A, k + 1, r, i - kl);
 	}
 }
 
@@ -134,5 +134,3 @@ int Partition(std::vector<T> &a, int low, int high, T x)
 	a[low] = x;
 	return low;
 }
-
-//尝试更改邮箱
