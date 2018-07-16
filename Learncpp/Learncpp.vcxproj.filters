@@ -59,5 +59,8 @@
     <ClCompile Include="DataStructure\kdTree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DataStructure\BSTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

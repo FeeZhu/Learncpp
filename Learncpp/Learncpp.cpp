@@ -43,13 +43,8 @@ int main()
 	a = maxsubarray3(A, 0, 16);
 	a = maxsubarray4(A, 0, 16);
 	*/
-	BSTree <int> tree;
-	srand((unsigned)time(NULL));
-	for (int i=1;i<10;i++)
-	{
-		tree.insert(rand());
-	}
-	cout<<tree.find(1);
+	
+	BSTree_test();
 	return 0;
 
 }

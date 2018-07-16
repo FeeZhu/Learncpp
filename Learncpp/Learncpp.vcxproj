@@ -157,6 +157,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DataStructure\BSTree.cpp" />
     <ClCompile Include="DataStructure\kdTree.cpp" />
     <ClCompile Include="Learncpp.cpp" />
     <ClCompile Include="stdafx.cpp">
