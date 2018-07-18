@@ -8,11 +8,15 @@ extern void BSTree_test()
 {
 	BSTree <int> tree;
 	srand((unsigned)time(NULL));
-	for (int i = 1; i < 10; i++)
+	int  array[6] = { 88,47,19,55,50,98 };
+	for (int i = 0; i < 6; i++)
 	{
-		tree.insert(i);
+		tree.insert(array[i]);
 	}
-	tree.print(tree.root);
-	tree.remove(1);
-	cout << tree.searchNode(1);
+	tree.print();
+	cout << tree.searchNode(88)<<endl;
+	tree.remove(88);
+	cout << tree.searchNode(88)<<endl;
+	tree.print();
+
 }
